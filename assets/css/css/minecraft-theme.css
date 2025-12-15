@@ -1,0 +1,383 @@
+/* ============================================
+   MINECRAFT THEME CSS
+   Estilo inspirado en Minecraft con pixelado
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    /* Colores Minecraft */
+    --mc-grass-green: #7cbd3c;
+    --mc-dirt-brown: #8B4513;
+    --mc-stone-gray: #7c7c7c;
+    --mc-cobblestone: #828282;
+    --mc-wood: #9c6f3b;
+    --mc-dark-wood: #6b4423;
+    --mc-diamond: #5ddbf4;
+    --mc-emerald: #17dd62;
+    --mc-gold: #fcee4b;
+    --mc-redstone: #c51010;
+    --mc-lapis: #2450c7;
+    --mc-obsidian: #0f0f23;
+    --mc-sky: #a2d2ff;
+    --mc-night: #050533;
+}
+
+/* Fuente pixelada global */
+body {
+    font-family: 'Press Start 2P', cursive, system-ui;
+    background-color: var(--mc-sky);
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    line-height: 1.8;
+    font-size: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.4);
+}
+
+/* Navbar Minecraft */
+.navbar {
+    background: linear-gradient(180deg, var(--mc-dark-wood) 0%, var(--mc-wood) 100%) !important;
+    border-bottom: 4px solid var(--mc-obsidian);
+    box-shadow: 0 4px 0 rgba(0,0,0,0.5);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px !important;
+    color: var(--mc-gold) !important;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+}
+
+.nav-link {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px !important;
+    color: #fff !important;
+    padding: 8px 15px !important;
+    margin: 0 5px;
+    transition: all 0.2s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    border: 3px solid #fff !important;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px !important;
+    padding: 8px 15px !important;
+    image-rendering: pixelated;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--mc-grass-green) !important;
+    border-color: var(--mc-grass-green) !important;
+}
+
+/* Hero Section - Cielo de Minecraft */
+.hero-minecraft {
+    background: linear-gradient(180deg, var(--mc-sky) 0%, #ffffff 100%);
+    border-bottom: 8px solid var(--mc-grass-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-minecraft::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--mc-grass-green) 0px,
+        var(--mc-grass-green) 20px,
+        var(--mc-dirt-brown) 20px,
+        var(--mc-dirt-brown) 21px
+    );
+}
+
+.hero-minecraft h1 {
+    font-size: 24px;
+    color: var(--mc-obsidian);
+    text-shadow: 4px 4px 0px var(--mc-gold);
+}
+
+.hero-minecraft .lead {
+    font-size: 11px;
+    color: var(--mc-stone-gray);
+}
+
+/* Botones estilo Minecraft */
+.btn {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px !important;
+    padding: 12px 25px !important;
+    border: 4px solid rgba(0,0,0,0.3) !important;
+    border-radius: 0 !important;
+    box-shadow: 
+        inset -2px -4px 0 rgba(0,0,0,0.3),
+        inset 2px 2px 0 rgba(255,255,255,0.3),
+        0 4px 0 rgba(0,0,0,0.5);
+    transition: all 0.1s;
+    image-rendering: pixelated;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    transform: translateY(2px);
+    box-shadow: 
+        inset -2px -2px 0 rgba(0,0,0,0.3),
+        inset 2px 2px 0 rgba(255,255,255,0.3),
+        0 2px 0 rgba(0,0,0,0.5);
+}
+
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: 
+        inset -1px -1px 0 rgba(0,0,0,0.3),
+        inset 1px 1px 0 rgba(255,255,255,0.3);
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, var(--mc-grass-green) 0%, #5a9c2a 100%) !important;
+    border-color: rgba(0,0,0,0.3) !important;
+}
+
+.btn-success {
+    background: linear-gradient(180deg, var(--mc-emerald) 0%, #12a850 100%) !important;
+}
+
+.btn-danger {
+    background: linear-gradient(180deg, var(--mc-redstone) 0%, #8b0000 100%) !important;
+}
+
+.btn-info {
+    background: linear-gradient(180deg, var(--mc-diamond) 0%, #3ba3c7 100%) !important;
+}
+
+.btn-light {
+    background: linear-gradient(180deg, #ffffff 0%, #d3d3d3 100%) !important;
+    color: var(--mc-obsidian) !important;
+}
+
+/* Cards estilo bloques de Minecraft */
+.card {
+    border: 4px solid var(--mc-stone-gray) !important;
+    border-radius: 0 !important;
+    box-shadow: 
+        8px 8px 0 rgba(0,0,0,0.2),
+        inset 2px 2px 0 rgba(255,255,255,0.3);
+    background: linear-gradient(135deg, #f0f0f0 0%, #d0d0d0 100%);
+    transition: transform 0.2s;
+    image-rendering: pixelated;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        12px 12px 0 rgba(0,0,0,0.2),
+        inset 2px 2px 0 rgba(255,255,255,0.3);
+}
+
+.card-img-top {
+    border-bottom: 4px solid var(--mc-stone-gray);
+    image-rendering: pixelated;
+}
+
+.card-title {
+    font-size: 12px !important;
+    color: var(--mc-obsidian);
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 8px !important;
+    line-height: 1.6;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Badges estilo etiquetas de Minecraft */
+.badge {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 7px !important;
+    padding: 6px 10px !important;
+    border-radius: 0 !important;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+}
+
+.bg-primary {
+    background: var(--mc-lapis) !important;
+}
+
+.bg-success {
+    background: var(--mc-emerald) !important;
+}
+
+.bg-info {
+    background: var(--mc-diamond) !important;
+}
+
+.bg-dark {
+    background: var(--mc-obsidian) !important;
+}
+
+/* Secciones con textura de bloques */
+.bg-light {
+    background: #f5f5f5 !important;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,.03) 10px, rgba(0,0,0,.03) 20px);
+}
+
+/* Forms estilo Minecraft */
+.form-control, .form-select {
+    border: 3px solid var(--mc-stone-gray) !important;
+    border-radius: 0 !important;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    padding: 10px !important;
+    box-shadow: inset 2px 2px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--mc-diamond) !important;
+    box-shadow: 
+        inset 2px 2px 0 rgba(0,0,0,0.2),
+        0 0 0 3px rgba(93, 219, 244, 0.3) !important;
+}
+
+.form-label {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px;
+    color: var(--mc-obsidian);
+    margin-bottom: 8px;
+}
+
+/* Footer estilo bedrock */
+.footer-minecraft {
+    background: linear-gradient(180deg, var(--mc-obsidian) 0%, #000 100%);
+    border-top: 4px solid var(--mc-stone-gray);
+    padding: 30px 0;
+}
+
+.footer-minecraft p {
+    font-size: 8px;
+    color: var(--mc-gold);
+}
+
+/* Sidebar Dashboard */
+.sidebar {
+    background: linear-gradient(180deg, var(--mc-dark-wood) 0%, var(--mc-obsidian) 100%) !important;
+    border-right: 4px solid var(--mc-stone-gray);
+}
+
+.sidebar .nav-link {
+    border-left: 4px solid transparent;
+    margin-bottom: 5px;
+}
+
+.sidebar .nav-link.active {
+    background-color: rgba(125, 189, 60, 0.3);
+    border-left-color: var(--mc-grass-green);
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Stats cards en dashboard */
+.stat-card {
+    background: linear-gradient(135deg, var(--mc-grass-green) 0%, #5a9c2a 100%);
+    border: 4px solid rgba(0,0,0,0.3);
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+}
+
+/* Iconos de redes sociales pixelados */
+.social-icon {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--mc-stone-gray);
+    border: 3px solid rgba(0,0,0,0.4);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    color: white;
+    image-rendering: pixelated;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+}
+
+.social-icon.facebook {
+    background: #3b5998;
+}
+
+.social-icon.twitter {
+    background: #1da1f2;
+}
+
+.social-icon.instagram {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+
+.social-icon.linkedin {
+    background: #0077b5;
+}
+
+.social-icon.github {
+    background: #333;
+}
+
+.social-icon.youtube {
+    background: #ff0000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        font-size: 9px;
+    }
+    
+    .hero-minecraft h1 {
+        font-size: 16px;
+    }
+    
+    .card-title {
+        font-size: 10px !important;
+    }
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--mc-stone-gray);
+    border: 2px solid var(--mc-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--mc-grass-green);
+    border: 2px solid var(--mc-obsidian);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--mc-emerald);
+}
