@@ -1,0 +1,118 @@
+<!-- Sidebar Component -->
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <h3>Menú</h3>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">✕</button>
+    </div>
+    
+    <nav class="sidebar-nav">
+        <ul>
+            <li><a href="#inicio">🏠 Inicio</a></li>
+            <li><a href="#sobre-mi">👤 Sobre Mí</a></li>
+            <li><a href="#proyectos">💼 Proyectos</a></li>
+            <li><a href="#contacto">📧 Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <div class="sidebar-footer">
+        <a href="login.html" class="sidebar-btn">Ingresar</a>
+        <a href="register.html" class="sidebar-btn">Registrarse</a>
+    </div>
+</aside>
+
+<style>
+.sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--dark);
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 15px;
+}
+
+.sidebar-nav a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.sidebar-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+.sidebar-btn {
+    display: block;
+    background: var(--teal);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+}
+
+.sidebar-btn:hover {
+    background: #088888;
+}
+</style>
+
+<script>
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+}
+</script>

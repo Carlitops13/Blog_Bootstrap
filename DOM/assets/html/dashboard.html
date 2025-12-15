@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Carlos Puente</title>
+    <link rel="stylesheet" href="../css/css/dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>📊 Dashboard</h2>
+            <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#" onclick="showSection('inicio')" class="active">🏠 Inicio</a></li>
+                <li><a href="#" onclick="showSection('proyectos')">💼 Mis Proyectos</a></li>
+                <li><a href="#" onclick="showSection('agregar')">➕ Agregar Proyecto</a></li>
+                <li><a href="#" onclick="showSection('perfil')">👤 Mi Perfil</a></li>
+                <li><a href="#" onclick="showSection('configuracion')">⚙️ Configuración</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <p id="userName">Usuario</p>
+                <p id="userEmail" style="font-size: 12px; opacity: 0.7;">email@example.com</p>
+            </div>
+            <button onclick="cerrarSesion()" class="btn-logout">🚪 Cerrar Sesión</button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <h1 id="pageTitle">Dashboard</h1>
+            <div class="header-actions">
+                <button onclick="window.location.href='../assets/html/index.html'" class="btn-primary">Ver Portafolio</button>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Inicio Section -->
+            <section id="inicio-section" class="content-section active">
+                <h2>Bienvenido al Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 id="totalProyectos">0</h3>
+                        <p>Proyectos Totales</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="proyectosPublicados">0</h3>
+                        <p>Publicados</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="vistasTotal">0</h3>
+                        <p>Vistas</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Proyectos Section -->
+            <section id="proyectos-section" class="content-section">
+                <h2>Mis Proyectos</h2>
+                <div id="proyectosList" class="projects-list"></div>
+            </section>
+
+            <!-- Agregar Proyecto Section -->
+            <section id="agregar-section" class="content-section">
+                <h2>Agregar Nuevo Proyecto</h2>
+                <form id="addProjectForm" class="project-form">
+                    <div class="form-group">
+                        <label for="projectTitle">Título del Proyecto *</label>
+                        <input type="text" id="projectTitle" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectDescription">Descripción *</label>
+                        <textarea id="projectDescription" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectImage">Imagen del Proyecto *</label>
+                        <input type="file" id="projectImage" accept="image/*" required>
+                        <small>Selecciona una imagen desde tu computadora (JPG, PNG, GIF)</small>
+                        <div id="imagePreview" style="margin-top: 10px; display: none;">
+                            <img id="previewImg" style="max-width: 200px; max-height: 200px; border-radius: 8px; border: 2px solid #ddd;" alt="Vista previa">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectTags">Tecnologías (separadas por coma) *</label>
+                        <input type="text" id="projectTags" placeholder="React, Node.js, MongoDB" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectLink">Enlace al Proyecto (opcional)</label>
+                        <input type="url" id="projectLink" placeholder="https://github.com/...">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Agregar Proyecto</button>
+                </form>
+            </section>
+
+            <!-- Perfil Section -->
+            <section id="perfil-section" class="content-section">
+                <h2>Mi Perfil</h2>
+                <div class="profile-info">
+                    <div class="profile-field">
+                        <strong>Nombres:</strong>
+                        <span id="profileNombres"></span>
+                    </div>
+                    <div class="profile-field">
+                        <strong>Apellidos:</strong>
+                        <span id="profileApellidos"></span>
+                    </div>
+                    <div class="profile-field">
+                        <strong>Email:</strong>
+                        <span id="profileEmail"></span>
+                    </div>
+                    <div class="profile-field">
+                        <strong>Username:</strong>
+                        <span id="profileUsername"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Configuración Section -->
+            <section id="configuracion-section" class="content-section">
+                <h2>Configuración</h2>
+                <div class="config-options">
+                    <button onclick="exportarDatos()" class="btn-config">📥 Exportar Datos</button>
+                    <button onclick="limpiarProyectos()" class="btn-config danger">🗑️ Limpiar Todos los Proyectos</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p>&copy; 2025 Carlos Puente Dashboard. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="../../../js/dashboard.js"></script>
+</body>
+</html>
