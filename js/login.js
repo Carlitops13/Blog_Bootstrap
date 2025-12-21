@@ -30,7 +30,7 @@ window.addEventListener('load', function() {
     
     if (usuarioGuardado && recordarme === 'true') {
         // Redirigir al dashboard
-        window.location.href = 'dashboard.html';
+        window.location.href = basePath('/dashboard.html');
     }
     
     // Cargar email si fue recordado
@@ -87,7 +87,7 @@ loginForm.addEventListener('submit', function(e) {
         alert(`¡Bienvenido ${usuario.nombres}!`);
         
         // Redirigir al dashboard
-        window.location.href = 'dashboard.html';
+        window.location.href = basePath('/dashboard.html');
     } else {
         // Credenciales incorrectas
         alert('Correo electrónico o contraseña incorrectos');
@@ -114,7 +114,7 @@ function cerrarSesion() {
         localStorage.removeItem('usuarioActual');
     }
     
-    window.location.href = 'login.html';
+    window.location.href = basePath('/login.html');
 }
 
 // Exportar función para uso global

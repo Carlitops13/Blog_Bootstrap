@@ -6,12 +6,12 @@
 }
 
 html, body {
-    height: 100%;
+    height: auto;
     width: 100%;
 }
 
 body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: white !important;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -26,54 +26,62 @@ body {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     height: auto;
-    min-height: auto;
-    max-width: 1000px;
     width: 100%;
+    max-width: 1400px;
+    padding: 0 !important;
 }
 
 .row.h-100 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: auto;
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin: 0 !important;
 }
 
 aside {
     padding: 60px 40px !important;
     display: flex !important;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--mc-grass-green, #4CAF50) 0%, var(--mc-emerald, #2196F3) 50%, var(--mc-diamond, #9C27B0) 100%);
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, var(--mc-grass-green, #4CAF50) 0%, var(--mc-emerald, #2196F3) 50%, var(--mc-diamond, #9C27B0) 100%) !important;
+    min-height: 100vh;
+    flex: 0 0 30%;
+    flex-direction: column;
 }
 
 aside .text-center {
     animation: fadeIn 0.8s ease-in-out;
+    width: 100%;
 }
 
 aside h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem !important;
     font-weight: 700;
     margin-bottom: 20px;
     color: white;
 }
 
 aside .text-center p {
-    font-size: 1.1rem;
+    font-size: 1.2rem !important;
     opacity: 0.95;
     color: white;
+    margin-bottom: 15px;
 }
 
 main {
-    background: #f8f9fa;
-    padding: 40px !important;
+    background: white;
+    padding: 0 !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 400px;
+    flex: 1;
+    min-height: 100vh;
 }
 
 form {
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
+    padding: 60px 80px;
 }
 
 form h2 {
@@ -200,6 +208,7 @@ form > .text-muted {
     
     main {
         padding: 35px !important;
+        min-height: auto;
     }
     
     form h2 {
@@ -235,7 +244,7 @@ form > .text-muted {
     
     main {
         padding: 25px !important;
-        min-height: 350px;
+        min-height: auto;
     }
     
     form {
