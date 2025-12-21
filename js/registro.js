@@ -114,7 +114,7 @@ registerForm.addEventListener('submit', function(e) {
     console.log('Redirigiendo a index.html');
     
     // Redirigir al dashboard
-    window.location.href = 'dashboard.html';
+    window.location.href = basePath('/dashboard.html');
 });
 
 

@@ -4,7 +4,7 @@ window.addEventListener('load', function() {
     
     if (!usuarioActual) {
         alert('Debes iniciar sesión para acceder al dashboard');
-        window.location.href = 'login.html';
+        window.location.href = basePath('/login.html');
         return;
     }
     
@@ -285,7 +285,7 @@ function cerrarSesion() {
             localStorage.removeItem('usuarioActual');
         }
         
-        window.location.href = 'login.html';
+        window.location.href = basePath('/login.html');
     }
 }
 

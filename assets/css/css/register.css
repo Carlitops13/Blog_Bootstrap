@@ -6,12 +6,12 @@
 }
 
 html, body {
-    height: 100%;
+    height: auto;
     width: 100%;
 }
 
 body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: white !important;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -20,87 +20,102 @@ body {
     padding: 20px;
 }
 
-.container-fluid.vh-100 {
+.container-fluid {
     background: white;
     border-radius: 15px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     overflow: hidden;
-    max-width: 1000px;
+    max-width: 1400px;
     width: 100%;
-    height: auto;
+    min-height: auto;
+    padding: 0 !important;
 }
 
-.row.h-100 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: auto;
+.row {
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin: 0 !important;
 }
 
 aside {
     padding: 60px 40px !important;
     display: flex !important;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--mc-grass-green, #4CAF50) 0%, var(--mc-emerald, #2196F3) 50%, var(--mc-diamond, #9C27B0) 100%);
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, var(--mc-grass-green, #4CAF50) 0%, var(--mc-emerald, #2196F3) 50%, var(--mc-diamond, #9C27B0) 100%) !important;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 aside .text-center {
     animation: fadeIn 0.8s ease-in-out;
+    width: 100%;
 }
 
 aside h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem !important;
     font-weight: 700;
     margin-bottom: 20px;
     color: white;
 }
 
 aside .text-center p {
-    font-size: 1.1rem;
+    font-size: 1.2rem !important;
     opacity: 0.95;
     color: white;
+    margin-bottom: 15px;
 }
 
 main {
-    background: #f8f9fa;
-    padding: 40px !important;
+    background: white;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow-y: auto;
-    max-height: 90vh;
+    flex: 1;
+    padding-top: 40px !important;
+    max-height: 100vh;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.w-100 {
+    width: 100%;
+    padding: 40px 80px 80px 80px !important;
 }
 
 form {
     width: 100%;
-    max-width: 500px;
 }
 
 form h2 {
     color: #333;
     margin-bottom: 10px;
-    font-size: 1.8rem;
+    font-size: 2.5rem !important;
 }
 
 form > .text-muted {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     margin-bottom: 30px;
 }
 
 .form-label {
     color: #555;
-    font-weight: 500;
-    font-size: 0.95rem;
-    margin-bottom: 8px;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 10px;
+    display: block;
 }
 
 .form-control {
     border: 2px solid #e0e0e0;
     border-radius: 8px;
-    padding: 10px 15px;
-    font-size: 0.95rem;
+    padding: 12px 16px !important;
+    font-size: 1.05rem !important;
     transition: all 0.3s ease;
     width: 100%;
+    min-height: 48px !important;
 }
 
 .form-control:focus {
@@ -109,22 +124,31 @@ form > .text-muted {
     background-color: #fff;
 }
 
+.mb-4 {
+    margin-bottom: 20px !important;
+}
+
+.mb-5 {
+    margin-bottom: 30px !important;
+}
+
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
     border-radius: 8px;
-    padding: 12px 20px;
-    font-weight: 600;
+    padding: 14px 24px !important;
+    font-weight: 600 !important;
     transition: all 0.3s ease;
-    font-size: 1rem;
-    width: 100%;
+    font-size: 1.15rem !important;
+    width: 100% !important;
     color: white;
+    min-height: 54px !important;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
 }
 
 .btn-primary:active {
@@ -135,6 +159,8 @@ form > .text-muted {
     color: #667eea;
     font-weight: 600;
     transition: color 0.3s ease;
+    font-size: 1.05rem;
+    text-decoration: none;
 }
 
 .text-center a:hover {
@@ -142,14 +168,30 @@ form > .text-muted {
     text-decoration: underline !important;
 }
 
-.row {
-    display: flex;
-    gap: 15px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.col-md-6 {
-    flex: 1;
-    min-width: 0;
+/* Responsive */
+@media (max-width: 992px) {
+    aside {
+        display: none !important;
+    }
+    
+    main {
+        max-height: none;
+    }
+    
+    .w-100 {
+        padding: 40px 40px !important;
+    }
 }
 
 /* Tablet: 768px - 991px */
@@ -174,6 +216,7 @@ form > .text-muted {
     main {
         padding: 35px !important;
         max-height: none;
+        min-height: auto;
     }
     
     form h2 {
@@ -210,6 +253,7 @@ form > .text-muted {
     main {
         padding: 25px !important;
         max-height: none;
+        min-height: auto;
     }
     
     form {
